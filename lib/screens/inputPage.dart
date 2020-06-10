@@ -1,9 +1,11 @@
+import 'package:bmicalculator/screens/result_page.dart';
 import 'package:flutter/material.dart';
 import 'package:bmicalculator/constants.dart';
 import 'package:bmicalculator/components/reusebleCard.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:bmicalculator/components/icon_content.dart';
 import 'package:bmicalculator/components/round_action_button.dart';
+import 'package:bmicalculator/components/bottom_bar.dart';
 
 enum Gender {
   male,
@@ -218,11 +220,12 @@ class _InputPageState extends State<InputPage> {
               ],
             ),
           ),
-          Container(
-            color: Color(0xFFEB1555),
-            margin: EdgeInsets.only(top: 10.0),
-            width: double.infinity,
-            height: kHeightOfBottomBar,
+          BottomBar(
+            barText: 'CALCULATE',
+            onPush: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => ResultPage()));
+            },
           ),
         ],
       ),
