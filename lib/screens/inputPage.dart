@@ -6,6 +6,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:bmicalculator/components/icon_content.dart';
 import 'package:bmicalculator/components/round_action_button.dart';
 import 'package:bmicalculator/components/bottom_bar.dart';
+import 'package:bmicalculator/calculator_brain.dart';
 
 enum Gender {
   male,
@@ -223,8 +224,19 @@ class _InputPageState extends State<InputPage> {
           BottomBar(
             barText: 'CALCULATE',
             onPush: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => ResultPage()));
+              CalculatorBrain calulate =
+                  CalculatorBrain(height: height, weight: weight);
+
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => ResultPage(
+                    bmiInterpretation: calulate.getBMIInterpretation(),
+                    bmiResult: calulate.calculateBMI(),
+                    bmiFitnessResult: calulate.resultBMIFitness(),
+                  ),
+                ),
+              );
             },
           ),
         ],

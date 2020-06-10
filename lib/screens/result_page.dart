@@ -4,6 +4,11 @@ import 'package:bmicalculator/components/reusebleCard.dart';
 import 'package:bmicalculator/components/bottom_bar.dart';
 
 class ResultPage extends StatelessWidget {
+  ResultPage({this.bmiFitnessResult, this.bmiInterpretation, this.bmiResult});
+
+  final String bmiResult;
+  final String bmiFitnessResult;
+  final String bmiInterpretation;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,15 +36,16 @@ class ResultPage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
                   Text(
-                    'OVERWEIGHT',
+                    bmiFitnessResult,
                     style: kFitnessResultTextStyle,
                   ),
                   Text(
-                    '23',
+                    bmiResult,
                     style: kBMIIndexTextStyle,
                   ),
                   Text(
-                    'You have higher then normal body weight',
+                    bmiInterpretation,
+                    textAlign: TextAlign.center,
                     style: kBMIResultTextStyle,
                   ),
                 ],
