@@ -11,8 +11,7 @@ Design link
 
 ### Screenshots of my App
 
-<img src= "images/Screenshot1.png'>
-<img src= "images/Screenshot2.png'>
+![](images/Screenshot1.png) ![](images/Screenshot2.png) 
 
 Made by Jiju Thomas 😎
  
